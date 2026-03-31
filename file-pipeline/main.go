@@ -8,13 +8,41 @@ import (
 	"time"
 )
 
+/*
 // ═══════════════════════════════════════════
 // SQUAD PIPELINE CONTRACT
-// Squad: The Interface
+// Squad: [The Interface]
+// ───────────────────────────────────────────
+// Input line types:
+//   [
+        Lines in ALL CAPS
+        Lines in all lowercase
+        Lines with extra leading/trailing spaces
+        Lines that are only dashes or blanks
+       ]
+//
+// Transformation rules (in order):
+//   1. [Convert ALL CAPS lines to Title Case]
+//   2. [Convert all lowercase lines to uppercase]
+//   3. [Trim all leading and trailing whitespace]
+//   4. [Reverse the words in any line that contains the word REVERSE]
+//   5. [Remove lines that are only dashes or blanks]
+//
+// Output format:
+//   [Header: yes]
+//   [Line numbering format: "1"]
+//   [Summary block: yes]
+//
+// Terminal summary fields:
+//   [Lines read    : [number]]
+//   [Lines written : [number]]
+//   [Lines removed : [number]]
+//   [Rules applied : [list your 5 rules]]
 // ═══════════════════════════════════════════
+═════════════════════════════════════════
+*/
 
-// ---------- RULE 1: ALL CAPS → Title Case ----------
-func allCapsToTitle(line string) string {
+func allCaps(line string) string {
 	if line == strings.ToUpper(line) && line != "" {
 		words := strings.Fields(line)
 		for i, w := range words {
@@ -25,7 +53,6 @@ func allCapsToTitle(line string) string {
 	return line
 }
 
-// ---------- RULE 2: lowercase → UPPERCASE ----------
 func lowerToUpper(line string) string {
 	if line == strings.ToLower(line) && line != "" {
 		return strings.ToUpper(line)
@@ -33,13 +60,11 @@ func lowerToUpper(line string) string {
 	return line
 }
 
-// ---------- RULE 3: Trim ----------
 func trim(line string) string {
 	return strings.TrimSpace(line)
 }
 
-// ---------- RULE 4: Reverse words if contains REVERSE ----------
-func reverseIfNeeded(line string) string {
+func reverse(line string) string {
 	if strings.Contains(line, "REVERSE") {
 		words := strings.Fields(line)
 		for i, j := 0, len(words)-1; i < j; i, j = i+1, j-1 {
@@ -50,18 +75,15 @@ func reverseIfNeeded(line string) string {
 	return line
 }
 
-// ---------- RULE 5: Flag long lines ----------
-func flagLong(line string) string {
+func ifLong(line string) string {
 	if len(line) > 80 {
 		return line + " [TRUNCATED]"
 	}
 	return line
 }
 
-// ---------- MAIN ----------
 func main() {
 
-	// ---------- ARGUMENT CHECK ----------
 	if len(os.Args) != 3 {
 		fmt.Println("Usage: go run . <input.txt> <output.txt>")
 		return
@@ -71,21 +93,19 @@ func main() {
 	output := os.Args[2]
 
 	if input == output {
-		fmt.Println("✗ Input and output cannot be the same file.")
+		fmt.Println("Input and output cannot be the same file.")
 		return
 	}
 
-	// ---------- OPEN INPUT ----------
 	file, err := os.Open(input)
 	if err != nil {
-		fmt.Printf("✗ File not found: %s\n", input)
+		fmt.Printf("File not found: %s\n", input)
 		return
 	}
 	defer file.Close()
 
-	// ---------- CHECK OUTPUT PATH ----------
 	if info, err := os.Stat(output); err == nil && info.IsDir() {
-		fmt.Println("✗ Cannot write to output: path is a directory, not a file.")
+		fmt.Println("Cannot write to output: path is a directory, not a file.")
 		return
 	}
 
@@ -98,40 +118,35 @@ func main() {
 		line := scanner.Text()
 		linesRead++
 
-		// APPLY RULES IN ORDER
-		line = allCapsToTitle(line)
+		line = allCaps(line)
 		line = lowerToUpper(line)
 		line = trim(line)
-		line = reverseIfNeeded(line)
-		line = flagLong(line)
+		line = reverse(line)
+		line = ifLong(line)
 
 		processed = append(processed, line)
 	}
 
 	if linesRead == 0 {
-		fmt.Println("⚠ Input file is empty. Nothing to process.")
+		fmt.Println("Input file is empty. Nothing to process.")
 	}
 
-	// ---------- WRITE OUTPUT ----------
 	out, err := os.Create(output)
 	if err != nil {
-		fmt.Println("✗ Failed to write output file.")
+		fmt.Println("Failed to write output file.")
 		return
 	}
 	defer out.Close()
 
 	writer := bufio.NewWriter(out)
 
-	// HEADER
 	writer.WriteString("SENTINEL INTERFACE REPORT\n")
 	writer.WriteString("─────────────────────────\n")
 
-	// NUMBERING (1, 2, 3...)
 	for i, line := range processed {
 		writer.WriteString(fmt.Sprintf("%d. %s\n", i+1, line))
 	}
 
-	// SUMMARY BLOCK
 	writer.WriteString("─────────────────────────\n")
 	writer.WriteString("SUMMARY\n")
 	writer.WriteString(fmt.Sprintf("Lines read : %d\n", linesRead))
@@ -143,10 +158,9 @@ func main() {
 
 	writer.Flush()
 
-	// ---------- TERMINAL OUTPUT ----------
-	fmt.Printf("✦ Lines read : %d\n", linesRead)
-	fmt.Printf("✦ Lines written : %d\n", len(processed))
-	fmt.Println("✦ Lines removed : 0")
-	fmt.Println("✦ Rules applied : CAPS→Title, lower→UPPER, Trim, Reverse(REVERSE), Flag long")
-	fmt.Printf("✦ Processed at : %s\n", timestamp)
+	fmt.Printf("Lines read : %d\n", linesRead)
+	fmt.Printf("Lines written : %d\n", len(processed))
+	fmt.Println("Lines removed : 0")
+	fmt.Println("Rules applied : CAPS→Title, lower→UPPER, Trim, Reverse(REVERSE), Flag long")
+	fmt.Printf("Processed at : %s\n", timestamp)
 }
