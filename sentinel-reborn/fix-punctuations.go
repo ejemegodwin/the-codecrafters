@@ -48,7 +48,7 @@ func Punctuations(text string) string {
 
 }
 
-func main() {
+/*func main() {
 	fmt.Println(Punctuations("I was sitting over there ,and then BAMM !!"))
 	fmt.Println(Punctuations("I was thinking ... You were right"))
-}
+}*/
