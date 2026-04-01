@@ -18,7 +18,7 @@ func capN(input string) string {
 	})
 }
 
-func main() {
+/*func main() {
 	inputs := []string{
 		"Welcome to the Brooklyn bridge (cap)",
 		"the quick brown fox (cap) jumps",
@@ -28,3 +28,4 @@ func main() {
 		fmt.Println(capN(s))
 	}
 }
+*/
