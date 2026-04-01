@@ -1,3 +1,7 @@
+# THE INTERFACES
+
+----
+
 README.md must include:
 
 - What the program does
@@ -8,7 +12,20 @@ README.md must include:
 - One thing you understand now that
   you did not understand this morning
 
-# 
+# EJEME GODWIN - The Leader of this Magnificent Group
+
+---
+
+My Contribution today was epic. I tried my best actually even though i don't know much, i did what I know and it was tested and it ran well.
+
+My work on this project was the `capN` which I did three times but i was cleared, i did the first one and they said it is an answer for a normal recoding question which I did another one and I never showed that to anybody bacause even me that wrote it was not convince, the code was working though but nah, so as asked for ideas I was shared some and I tried again and I got it right. By that time i was already tired and hungry.
+
+My approach on the code I got right was that i use `regexp` for pattern matching, because it is like a search tool that can find, validate, or replace text based on rules instead of exact words. And I aslo used `reCap` to work with my text pattern and I also use `ReplaceAllStringFunc` to find all matches of a pattern and replace each one using a custom function and then the strings.Split which is used to to cut string into pieces using the separator. 
+
+**Then the pushing and merge** this is were the work is, I did the merging well but some file stress my life. Some are stubborn and refuse to merge, some of my group members work even refused to be pushed which almost killed me. lol
+
+**Lastly** the `main.go` file where we join all the files together after the stress of pushing and merging. WE ARE DONE!!!
+
 # hmusa
 
 **What your personal contribution was**
