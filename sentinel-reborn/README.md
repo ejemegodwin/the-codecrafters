@@ -50,7 +50,7 @@ I emperward my tag with a simple .Title function with a finishing touch of joini
 
 ------------------------------------------------------------------------------------------
 # Tavershima Elvis
-# personal contribution;
+**personal contribution;**
 #A CLI tool for handling upper
 . The CLI tool turns the previous word or words into upper case any where it sees (up, number) in a text the "(up, number)" is the command the Command Line Interface is using, if replace number in the bracket with a number in figure with the up, ;the texts at the length of the indicate number turns to uppercase.
 
@@ -59,9 +59,25 @@ I emperward my tag with a simple .Title function with a finishing touch of joini
          
 .My contribution to the program is the part where my function handles the ToUpper in the text and brainstorming with my group members in to bring out result in this aspect as our section was base on handling up, cap and low, also the general merging of the files.
 
-# One Thing I Found Hardest and Understand Today
+**One Thing I Found Hardest and Understand Today**
 
 .One thing i found hard today is the logic of implementing the command after identifying the markers in the text that represent commands
 
 . one thing i understand is first, how to work in group, breaking task to peices and working on them also creating a pull request
 
+
+# Onminyi Andrew Okala
+**Personal Contribution**
+I wrote the functions for `cap`, `low` and `up`
+To run the code your input should carry this prefix `(cap)` for capitalization, `(low)` for lowercase and `(up)` for upppercase
+
+Example:
+fmt.Println(parseModifier("Onminyi Andrew Okala (up)"))
+Output:
+ONMINYI ANDREW OKALA
+
+**My Difficult Moment Today**
+At first i wasn't sure of how to implement the code, I even misplaced priority by going to perform the task assign to the other members of the group.
+
+**What I understood Today**
+I understood how to use the `strings.Index` and `strings.Contains()` in a function very well now.
