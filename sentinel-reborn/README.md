@@ -1,3 +1,13 @@
+README.md must include:
+    - What the program does
+    - How to run it with examples
+    - Each transformation listed and explained
+    - What your personal contribution was
+    - One thing you found hardest today
+    - One thing you understand now that
+      you did not understand this morning
+
+
 ## hmusa
 
 I implemented the function `lowN()` that handles the transformation of a specified number of words in a string to lowercase
