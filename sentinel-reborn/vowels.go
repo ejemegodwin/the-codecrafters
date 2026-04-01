@@ -22,7 +22,8 @@ func vol(s string) string {
 	}
 	return strings.Join(word, " ")
 }
-func main() {
+/*func main() {
 	fmt.Println(vol("An world. A hello and A union"))
 	fmt.Println(vol("There it was. A amazing rock!"))
 }
+*/
