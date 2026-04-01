@@ -35,11 +35,19 @@ I learnt new tactics to work around my loops, slices and strings, my creativity 
 ---
 
 
-## auoche
+# auoche
 
 I build a function called capN which is capable of capitalising the first character of strings as asigned
 
-What i did was i make sure that my program identifies the tag implimented in my text. knowing its start and end of a tag was my first logic then i also asign the word or words before the tag using a slice to be affected by the function of my tag using a loop then i emperward my tag with a simple .Title function with a finishing touch of joining the sliced words after convertion into strings as a ready processed words.
+What i did was i make sure that my program identifies the tag implimented in my text. 
+
+knowing its start and end of a tag was my first logic. 
+
+I also asign the word or words before the tag using a slice to be affected by the function of my tag using a loop. 
+
+I emperward my tag with a simple .Title function with a finishing touch of joining the sliced words after convertion into strings as a ready processed words.
+
+
 ------------------------------------------------------------------------------------------
 # Tavershima Elvis
 # personal contribution;
