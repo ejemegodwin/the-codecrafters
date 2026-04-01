@@ -8,7 +8,7 @@ README.md must include:
 - One thing you understand now that
   you did not understand this morning
 
-
+# 
 # hmusa
 
 **What your personal contribution was**
@@ -81,3 +81,21 @@ At first i wasn't sure of how to implement the code, I even misplaced priority b
 
 **What I understood Today**
 I understood how to use the `strings.Index` and `strings.Contains()` in a function very well now.
+---
+
+Lastly, i appended the remaining of the text after the marker to that slice and return it as a string through strings.Join.
+---
+
+# kinonoja
+
+When we started; I was given the job of handling the conversion of hexadecimal to decimal. 
+* HOW THIS WAS DONE
+First, I had to use "strconv" because we were converting a string to an integer
+
+Then i decided to declare a variable that err := strconv.ParseInt cause ParseInt interprets a string s in the given base (0, 2 to 36) and bit size (0 to 64) and returns the corresponding value i.
+
+After that i used if statement that if the error is not eqaul to it should return 0 and print "invalid hex string:" then i returned decimal and the nil figure
+
+Then i had to wriite another function that will bring the input and return everything in the output figure as presented using regexp.Must.Compile
+
+Then after i that, i joined in writing the read file and input to make sure the file brings out the output in everything
