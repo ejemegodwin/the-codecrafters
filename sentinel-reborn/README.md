@@ -37,7 +37,6 @@ I learnt new tactics to work around my loops, slices and strings, my creativity 
 # Tavershima Elvis
 # personal contribution;
 #A CLI tool for handling upper
-```go
 . The CLI tool turns the previous word or words into upper case any where it sees (up, number) in a text the "(up, number)" is the command the Command Line Interface is using, if replace number in the bracket with a number in figure with the up, ;the texts at the length of the indicate number turns to uppercase.
 
  Example: input= the world of go(up, 4) is wild
