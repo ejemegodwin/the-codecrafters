@@ -1,11 +1,12 @@
 README.md must include:
-    - What the program does
-    - How to run it with examples
-    - Each transformation listed and explained
-    - What your personal contribution was
-    - One thing you found hardest today
-    - One thing you understand now that
-      you did not understand this morning
+
+- What the program does
+- How to run it with examples
+- Each transformation listed and explained
+- What your personal contribution was
+- One thing you found hardest today
+- One thing you understand now that
+  you did not understand this morning
 
 
 ## hmusa
