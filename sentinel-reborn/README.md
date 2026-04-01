@@ -1,3 +1,5 @@
+# THE INTERFACES
+
 README.md must include:
 
 - What the program does
@@ -8,7 +10,19 @@ README.md must include:
 - One thing you understand now that
   you did not understand this morning
 
-# 
+# EJEME GODWIN - The Leader of this Magnificent Group
+
+---
+
+My Contribution today was epic. I tried my best actually even though i don't know much, i did what I know and it was tested and it ran well.
+
+My work on this project was the capN which I did three times but i was cleared, i did the first one and they said it is an answer for a normal recoding question which I did another one and I never showed that to anybody bacause even me that wrote it was not convince, the code was working though but nah, so as asked for ideas I was shared some and I tried again and I got it right. By that time i was already tired and hungry.
+
+My approach on the code I got right was that i use regexp for pattern matching, because it is like a search tool that can find, validate, or replace text based on rules instead of exact words. And I aslo used reCap to work with my text pattern and I also use ReplaceAllStringFunc to find all matches of a pattern and replace each one using a custom function and then the strings.Split which is used to to cut string into pieces using the separator.
+
+Then the pushing and merge this is were the work is, I did the merging well but some file stress my life. Some are stubborn and refuse to merge, some of my group members work even refused to be pushed which almost killed me. lol
+
+Lastly the main.go file where we join all the files together after the stress of pushing and merging. WE ARE DONE!!!
 # hmusa
 
 **What your personal contribution was**
@@ -111,3 +125,75 @@ the one thing I found hardest today was to figure out how to get the standalone 
 * * One thing you understand now that you did not understand this morning
 
 Team work makes tedious job easier
+
+---
+
+# Quote and Punctuation Fixer by Agbaji Alexander
+
+A robust Go utility designed to clean up messy text by normalizing whitespace, fixing incorrectly spaced quotes, and ensuring punctuation marks are properly attached to words.
+
+Features
+Whitespace Normalization: Automatically collapses multiple spaces into a single space and trims leading/trailing whitespace.
+
+Smart Quote Handling:
+Removes spaces immediately after an opening single quote.
+Removes spaces immediately before a closing single quote.
+Punctuation Correction: Detects periods (.) and ensures there is no trailing space between the preceding word and the period.
+State Tracking: Uses a boolean toggle to distinguish between opening and closing quotes.
+
+Logic Breakdown
+Tokenization: The function uses strings.Fields and strings.Join to eliminate erratic spacing (e.g., "I am" becomes "I am").
+String Builder: Uses strings.Builder for efficient string construction, minimizing memory allocations during the loop.
+
+The inQuote Toggle:
+
+First ': Marks the start of a quote. The logic checks the next character; if it's a space, it skips it to pull the quoted word tight to the mark.
+
+Second ': Marks the end. It "looks back" at the strings.Builder buffer and removes any trailing space before placing the closing mark.
+Punctuation Buffer: Similar to the closing quote logic, if a period is detected, the function trims any trailing space from the current result before adding the ..
+Usage
+input := " '  hello world  ' . "
+output := fixQuotes(input)
+// Result: "'hello world'."
+
+
+Example Results
+Input
+Output
+' awesome '
+'awesome'
+' I am the smartest guy . '
+'I am the smartest guy.'
+how they describe me: ' awesome '
+
+---
+
+# MR KENNEDY
+
+---
+
+Go Text Completer & Formatter
+Project Overview
+This project is a command-line tool written in Go that serves as an automated text editor. It transforms raw, messy input files into polished, grammatically correct text by applying a series of algorithmic modifications. The tool focuses on three primary areas: mathematical conversions, case transformations, and orthographic cleanup (punctuation and quotes).
+Core Functionality: fixQuotes and formatText
+The heart of this tool lies in its ability to handle erratic spacing. Unlike simple find-and-replace methods, the implementation uses a token-based approach and regular expressions to ensure precision.
+1. Intelligent Quote Placement
+The fixQuotes function uses a state-tracking boolean (inQuote) to handle pairs of single quotes.
+Opening Quotes: It identifies the first instance of a quote and "pulls" the subsequent word toward it, eliminating any leading whitespace.
+Closing Quotes: It identifies the second instance and "sucks" it back toward the preceding word, ensuring no space exists between the last character of the sentence and the closing mark.
+2. Punctuation Normalization
+The formatting logic ensures that standard punctuation marks (., ,, !, ?, :, ;) are:
+Attached to the preceding word (no leading space).
+Followed by exactly one space (unless at the end of the file).
+Grouped correctly for special cases like ellipses (...) or combined marks (!?), preventing the logic from incorrectly spacing out these specific clusters.
+Features
+Number Conversions: Automatically detects (hex) and (bin) tags to convert preceding values into decimal format.
+Case Modification: Supports (up), (low), and (cap) with optional numerical arguments to modify multiple preceding words.
+Grammar Correction: Automatically converts the article "a" to "an" when the following word begins with a vowel or the letter 'h'.
+Usage
+bash
+go run . input.txt output.txt
+
+
+Use code with caution.
+This command reads the contents of input.txt, applies all processing rules, and writes the finalized version to output.txt.
