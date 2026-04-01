@@ -28,7 +28,7 @@ func replaceHexWithDec(input string) string {
 	})
 }
 
-func main() {
+/*func main() {
 	inputs := []string{
 		"1E (hex) files were added",
 		"The value is 2A (hex) and 10 (hex)",
@@ -39,3 +39,4 @@ func main() {
 		fmt.Println(replaceHexWithDec(s))
 	}
 }
+*/
