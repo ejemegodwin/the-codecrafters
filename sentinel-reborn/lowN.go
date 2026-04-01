@@ -1,4 +1,4 @@
-package theinterface
+package main
 
 import (
 	"fmt"
