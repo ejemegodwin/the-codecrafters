@@ -3,13 +3,21 @@ package main
 import (
 	"strconv"
 	"strings"
+	"unicode"
 )
 
-func UpN(text string) string {
+func capitalise(s string) string {
+	a := strings.ToLower(s)
+	runes := []rune(a)
+	runes[0] = unicode.ToUpper(runes[0])
+	return string(runes)
+}
+
+func CapN(text string) string {
 	newtext := []string{}
 	txt := strings.Fields(text)
 	for i := 0; i < len(txt); i++ {
-		if i+1 < len(txt) && strings.HasPrefix(txt[i], "(up,") && strings.ContainsAny(txt[i], ",") {
+		if i+1 < len(txt) && strings.HasPrefix(txt[i], "(cap,") && strings.ContainsAny(txt[i], ",") {
 			p := strings.TrimSuffix(txt[i+1], ")")
 			m, err := strconv.Atoi(p)
 
@@ -20,7 +28,7 @@ func UpN(text string) string {
 				for j := 1; j <= m; j++ {
 					target := len(newtext) - j
 
-					newtext[target] = strings.ToUpper(newtext[target])
+					newtext[target] = capitalise(newtext[target])
 				}
 				i++
 				continue

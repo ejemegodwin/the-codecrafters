@@ -27,16 +27,3 @@ func replaceHexWithDec(input string) string {
 		return fmt.Sprintf("%d", dec)
 	})
 }
-
-/*func main() {
-	inputs := []string{
-		"1E (hex) files were added",
-		"The value is 2A (hex) and 10 (hex)",
-		"No hex here",
-		"1a2b3c (hex) is a big number",
-	}
-	for _, s := range inputs {
-		fmt.Println(replaceHexWithDec(s))
-	}
-}
-*/

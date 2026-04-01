@@ -1,29 +1,34 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
-func parseModifier(t string) string {
-	t = strings.TrimSpace(t)
-	index := strings.Index(t, "(")
-	if strings.Contains(t, "(up)") {
-		t = strings.ToUpper(t)
-	}
-	if strings.Contains(t, "(low)") {
-		t = strings.ToLower(t)
-	}
-	if strings.Contains(t, "(cap)") {
-		t = strings.Title(t)
-	}
-	return t[:index]
-}
+func ParseModifier(t string) string {
+	s := strings.Fields(t)
+	result := []string{}
 
+	for i := 0; i < len(s); i++ {
+		word := s[i]
+		switch word {
+		case "(up)":
+			if len(result) > 0 {
+				result[len(result)-1] = strings.ToUpper(result[len(result)-1])
+			}
 
-/*func main() {
-	fmt.Println(parseModifier("hello (up)"))
-	fmt.Println(parseModifier("Onminyi Andrew Okala (low)"))
-	fmt.Println(parseModifier("hello andrew (cap)"))
+		case "(low)":
+			if len(result) > 0 {
+				result[len(result)-1] = strings.ToLower(result[len(result)-1])
+			}
+
+		case "(cap)":
+			if len(result) > 0 {
+				result[len(result)-1] = strings.Title(result[len(result)-1])
+			}
+		default:
+			result = append(result, word)
+		}
+
+	}
+	return strings.Join(result, " ")
 }
-*/

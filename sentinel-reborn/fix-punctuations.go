@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -27,7 +26,7 @@ func Punctuations(text string) string {
 
 							textSlice[i-1] = textSlice[i-1] + (textSlice[i])[:freq]
 
-							textSlice[i] = (textSlice[i])[freq:] // I was sitting over there ,and then BAMM !!
+							textSlice[i] = (textSlice[i])[freq:]
 						}
 					}
 				}
@@ -47,8 +46,3 @@ func Punctuations(text string) string {
 	return newText
 
 }
-
-/*func main() {
-	fmt.Println(Punctuations("I was sitting over there ,and then BAMM !!"))
-	fmt.Println(Punctuations("I was thinking ... You were right"))
-}*/
