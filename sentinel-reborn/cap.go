@@ -4,20 +4,25 @@ import (
 	"fmt"
 	"strings"
 )
- func toUpper(word string) string {
-	return strings.ToUpper(word)
- }
 
- func toLower(word string) string {
-	return strings.ToLower(word)
- }
+func parseModifier(t string) string {
+	t = strings.TrimSpace(t)
+	index := strings.Index(t, "(")
+	if strings.Contains(t, "(up)") {
+		t = strings.ToUpper(t)
+	}
+	if strings.Contains(t, "(low)") {
+		t = strings.ToLower(t)
+	}
+	if strings.Contains(t, "(cap)") {
+		t = strings.Title(t)
+	}
+	return t[:index]
+}
 
- func toTitle(word string) string {
-	return strings.Title(word)
- }
 
 func main() {
-	fmt.Println(toUpper("hello royalty"))
-	fmt.Println(toLower("KING ODOPKOLOPKOLO"))
-	fmt.Println(toTitle("onminyi andrew okala"))
+	fmt.Println(parseModifier("hello (up)"))
+	fmt.Println(parseModifier("Onminyi Andrew Okala (low)"))
+	fmt.Println(parseModifier("hello andrew (cap)"))
 }
