@@ -1,12 +1,11 @@
-package main
+package theInterface
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
 
-func up(text string) string {
+func Up(text string) string {
 	newtext := []string{}
 	txt := strings.Fields(text)
 	for i := 0; i < len(txt); i++ {
@@ -32,7 +31,4 @@ func up(text string) string {
 	}
 	return strings.Join(newtext, " ")
 
-}
-func main() {
-	fmt.Println(up("this is a programing language (up, 4) go"))
 }

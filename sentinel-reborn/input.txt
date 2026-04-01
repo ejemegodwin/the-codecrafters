@@ -1,0 +1,9 @@
+1010 (bin) and 11111111 (bin)
+FF (hex) plus 10 (hex)
+one two three (up, 2)
+hello world test (cap, 2)
+HELLO WORLD THERE (low, 2)
+greeting (cap)
+It was a apple and an banana and A owl and An cat
+I was sitting over there ,and then BAMM !!
+She said '    hello    ' to me

@@ -1,12 +1,11 @@
-package main
+package theInterface
 
 import (
-	"fmt"
 	"strings"
 	"unicode"
 )
 
-func fixQuotes(s string) string {
+func FixQuotes(s string) string {
 	var result strings.Builder
 	n := len(s)
 	inQuote := false
@@ -40,12 +39,4 @@ func fixQuotes(s string) string {
 		}
 	}
 	return strings.TrimSpace(result.String())
-}
-
-func main() {
-	input1 := "  I am exactly how they describe me: ' awesome    '       "
-	input2 := "   As Agbaji alexander said: ' I       am the most well-known smartest guy in the world    .     '"
-
-	fmt.Println(fixQuotes(input1))
-	fmt.Println(fixQuotes(input2))
 }

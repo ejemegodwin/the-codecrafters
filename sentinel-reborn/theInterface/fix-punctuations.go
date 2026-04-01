@@ -1,7 +1,6 @@
-package main
+package theInterface
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -46,9 +45,4 @@ func Punctuations(text string) string {
 
 	return newText
 
-}
-
-func main() {
-	fmt.Println(Punctuations("I was sitting over there ,and then BAMM !!"))
-	fmt.Println(Punctuations("I was thinking ... You were right"))
 }

@@ -1,16 +1,11 @@
-package main
+package theInterface
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
 
-func main() {
-	fmt.Println(capN("i remember my name, like yesterday (cap, 6)"))
-}
-
-func capN(s string) string {
+func CapN(s string) string {
 	open_Tag := strings.Index(s, "(")
 	close_Tag := strings.Index(s, ")")
 	Tag := s[open_Tag : close_Tag+1]

@@ -1,11 +1,10 @@
-package main
+package theInterface
 
 import (
-	"fmt"
 	"strings"
 )
 
-func parseModifier(t string) string {
+func ParseModifier(t string) string {
 	t = strings.TrimSpace(t)
 	index := strings.Index(t, "(")
 	if strings.Contains(t, "(up)") {
@@ -18,11 +17,4 @@ func parseModifier(t string) string {
 		t = strings.Title(t)
 	}
 	return t[:index]
-}
-
-
-func main() {
-	fmt.Println(parseModifier("hello (up)"))
-	fmt.Println(parseModifier("Onminyi Andrew Okala (low)"))
-	fmt.Println(parseModifier("hello andrew (cap)"))
 }

@@ -1,18 +1,11 @@
-package theinterface
+package theInterface
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
 
-// I was in the room (low, 2), yes
-
-func main() {
-	fmt.Println(lowN("I was in THE THIRD ROOM FLOOR (low, 2), yes"))
-}
-
-func lowN(text string) string {
+func LowN(text string) string {
 	opening_Marker := strings.Index(text, "(")
 	closing_Marker := strings.Index(text, ")")
 	marker := text[opening_Marker : closing_Marker+1]
