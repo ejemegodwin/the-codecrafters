@@ -1,7 +1,7 @@
 // CodeCrafters — Operation Gopher Protocol
 // Module: String Transformer
-// Author: Ejeme Godwin > The Leader
-// Squad:  Your Squad Name
+// Author: Ameh Destiny
+// Squad:  the interface
 
 package main
 
